@@ -115,9 +115,9 @@ function showResults(parent, lists, modeLabel){
     return p;
   }
 
-  const p1 = makePanel('Super Efficace (x2 ou x4)', lists.forces);
-  const p2 = makePanel('Peu Efficace/Immunisé (x0, x0.25, x0.5)', lists.weaknesses);
-  const p3 = makePanel('Neutre (x1)', lists.neutral);
+  const p1 = makePanel('Super Effective (x2 or x4)', lists.forces);
+  const p2 = makePanel('Not very effective/Immune (x0, x0.25, x0.5)', lists.weaknesses);
+  const p3 = makePanel('Neutral (x1)', lists.neutral);
 
   wrapper.appendChild(p1);
   wrapper.appendChild(p2);
@@ -134,7 +134,7 @@ function showResults(parent, lists, modeLabel){
 // ---------- Modes ----------
 function attackMode(root){
   clearAndFocus(root);
-  root.appendChild(make('Mode Attaque — Choisissez un Type Attaquant'));
+  root.appendChild(make('Attack Mode — Choose an Attacking Type'));
   createTypeGrid(root, (type) => {
     // calcule pour chaque défense
     const forces = [], weaknesses = [], neutral = [];
@@ -232,8 +232,8 @@ window.addEventListener('DOMContentLoaded', () => {
     c.innerHTML = '<h2>Mode Défense — Choisissez 1 ou 2 types</h2>';
     app.appendChild(c);
     const controls = document.createElement('div'); controls.className='controls';
-    const single = document.createElement('button'); single.className='small-btn'; single.textContent='Un seul type';
-    const two = document.createElement('button'); two.className='small-btn'; two.textContent='Deux types';
+    const single = document.createElement('button'); single.className='small-btn'; single.textContent='One type only';
+    const two = document.createElement('button'); two.className='small-btn'; two.textContent='Two types';
     controls.appendChild(single); controls.appendChild(two);
     app.appendChild(controls);
 
